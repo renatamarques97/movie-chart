@@ -17,13 +17,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :gender %>
-    <%= form.text_field :gender %>
+    <%= form.label :genre %>
+    <%= form.select :title, Genre.title.options %>
   </div>
 
   <div class="field">
-    <%= form.label :times_watched %>
-    <%= form.number_field :times_watched %>
+    <%= form.label :watch_count %>
+    <%= form.number_field :watch_count %>
   </div>
 
   <div class="actions">

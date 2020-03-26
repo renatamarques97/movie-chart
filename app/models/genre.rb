@@ -1,6 +1,6 @@
 class Genre < ApplicationRecord
-  has_many :movies
   extend Enumerize
+  has_many :movies, dependent: :destroy
 
   enumerize :title, in: { horror: 0,
                           drama: 1,
