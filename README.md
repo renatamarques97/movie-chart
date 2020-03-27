@@ -1,24 +1,37 @@
-# README
+# Movie Chart
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A platform to track how many times you watched a movie and organize by genre.
 
-Things you may want to cover:
+# Ruby version
+```
+2.6.4
+```
 
-* Ruby version
+# Rails version
+```
+6.0.2
+```
 
-* System dependencies
+# Configuration
+```
+bundle install
+yarn install
+```
 
-* Configuration
+# Database creation
+```
+bundle exec rails db:setup
+```
 
-* Database creation
+# How to run the test suite
+```
+bundle exec rspec
+```
 
-* Database initialization
+# Run the server
+```
+bundle exec rails server
+```
 
-* How to run the test suite
+`check localhost:3000`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
