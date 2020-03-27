@@ -2,36 +2,36 @@
 
 A platform to track how many times you watched a movie and organize by genre.
 
-# Ruby version
+### Ruby version
 ```
 2.6.4
 ```
 
-# Rails version
+### Rails version
 ```
 6.0.2
 ```
 
-# Configuration
+### Configuration
 ```
 bundle install
 yarn install
 ```
 
-# Database creation
+### Database creation
 ```
 bundle exec rails db:setup
 ```
 
-# How to run the test suite
+### How to run the test suite
 ```
 bundle exec rspec
 ```
 
-# Run the server
+### Run the server
 ```
 bundle exec rails server
 ```
 
-`check localhost:3000`
+### Check `localhost:3000`
 
