@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :genre %>
-    <%= form.select :title, Genre.title.options %>
+    <%= form.select :genre_id, options_for_select(Genre.pluck(:title, :id))  %>
   </div>
 
   <div class="field">
