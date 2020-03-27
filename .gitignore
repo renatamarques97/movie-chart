@@ -37,6 +37,6 @@ yarn-debug.log*
 .browserslistrc
 .DS_Store
 
-#Ignore vim files
-.swp
-.swo
+# Ignore vim files
+.*.swp
+.*.swo
