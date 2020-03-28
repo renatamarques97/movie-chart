@@ -3,7 +3,8 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
-    @data = Movie.joins(:genre).group("genres.title").count
+    @movie_count_data = Movie.joins(:genre).group("genres.title").count
+    @watch_count_data = Movie.joins(:genre).group("genres.title").sum(:watch_count)
   end
 
   def show
