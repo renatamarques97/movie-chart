@@ -1,13 +1,10 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :set_movie, only: [:edit, :update, :destroy]
 
   def index
     @movies = Movie.all
     @movie_count_data = Movie.joins(:genre).group("genres.title").count
     @watch_count_data = Movie.joins(:genre).group("genres.title").sum(:watch_count)
-  end
-
-  def show
   end
 
   def new
@@ -22,8 +19,8 @@ class MoviesController < ApplicationController
 
     respond_to do |format|
       if @movie.save
-        format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
-        format.json { render :show, status: :created, location: @movie }
+        format.html { redirect_to({ action: :index }, notice: 'Movie was successfully created.') }
+        format.json { render :index, status: :created, location: @movie }
       else
         format.html { render :new }
         format.json { render json: @movie.errors, status: :unprocessable_entity }
@@ -34,8 +31,8 @@ class MoviesController < ApplicationController
   def update
     respond_to do |format|
       if @movie.update(movie_params)
-        format.html { redirect_to @movie, notice: 'Movie was successfully updated.' }
-        format.json { render :show, status: :ok, location: @movie }
+        format.html { redirect_to({ action: :index }, notice: 'Movie was successfully updated.') }
+        format.json { render :index, status: :ok, location: @movie }
       else
         format.html { render :edit }
         format.json { render json: @movie.errors, status: :unprocessable_entity }
