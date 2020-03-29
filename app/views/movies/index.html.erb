@@ -2,33 +2,46 @@
 
 <h1>Movies</h1>
 
-<%= pie_chart(@movie_count_data) %>
-<%= pie_chart(@watch_count_data) %>
+<header>
+  <button class="btn btn-primary collapse">Movies count organized by genre</button>
+  <div class="chart content">
+    <%= pie_chart(@movie_count_data) %>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Genre</th>
-      <th>Watch Count</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <button class="btn btn-primary collapse">Watch count organized by genre</button>
+  <div class="chart content">
+    <%= pie_chart(@watch_count_data) %>
+  </div>
+</header>
+</br>
 
-  <tbody>
-    <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.name %></td>
-        <td><%= movie.genre.title %></td>
-        <td><%= movie.watch_count %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<section class="container">
+ <button class="btn btn-success"><%= link_to 'New Movie', new_movie_path %></button>
+ <table>
+   <thead>
+     <tr>
+       <th>Name</th>
+       <th>Genre</th>
+       <th>Watch Count</th>
+       <th colspan="3">Actions</th>
+     </tr>
+   </thead>
 
+   <tbody>
+     <% @movies.each do |movie| %>
+       <tr>
+         <td><%= movie.name %></td>
+         <td><%= movie.genre.title %></td>
+         <td><%= movie.watch_count %></td>
+         <td><%= link_to '🖊️', edit_movie_path(movie) %></td>
+         <td><%= link_to '🗑️', movie,
+           method: :delete,
+           data: { confirm: 'Are you sure?' } %>
+         </td>
+       </tr>
+     <% end %>
+   </tbody>
+ </table>
+</section>
 <br>
 
-<%= link_to 'New Movie', new_movie_path %>
