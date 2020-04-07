@@ -3,20 +3,22 @@
 <h1>Movies</h1>
 
 <header>
-  <button class="btn btn-primary collapse">Movies count organized by genre</button>
+  <button class="btn btn-lg btn-primary collapse">Movies count organized by genre</button>
   <div class="chart content">
     <%= pie_chart(@movie_count_data) %>
   </div>
 
-  <button class="btn btn-primary collapse">Watch count organized by genre</button>
+  <button class="btn btn-lg btn-primary collapse">Watch count organized by genre</button>
   <div class="chart content">
     <%= pie_chart(@watch_count_data) %>
   </div>
 </header>
 </br>
 
+<button class="btn btn-md btn-primary collapse">My movies</button>
 <section class="container">
- <button class="btn btn-success"><%= link_to 'New Movie', new_movie_path %></button>
+ <button class="btn btn-md btn-success"><%= link_to 'New Movie', new_movie_path %></button>
+ </br>
  <table>
    <thead>
      <tr>

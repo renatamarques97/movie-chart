@@ -24,6 +24,7 @@ a {
 }
 .chart {
   max-width: 500px;
+  margin: 10px 200px 20px;
 }
 .btn {
   border: none;
@@ -48,7 +49,21 @@ a {
 .btn-success:hover {
   background-color: #008d4c;
 }
+.btn-lg {
+  max-width: 500px;
+}
+.btn-md {
+  max-width: 250px;
+}
 .content {
   display: none;
   overflow: hidden;
 }
+.container {
+  display: none;
+  width: 880px;
+  max-width: 100%;
+  margin: 10px 200px 20px;
+  text-align: left;
+}
+
